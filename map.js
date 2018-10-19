@@ -1,40 +1,39 @@
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
-var map, infoWindow;
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 39.8283, lng: -98.5795},
-        zoom: 24
+    var myLatLng = {lat: 25.774311, lng: -80.371441};
+  
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 18,
+      center: myLatLng
     });
-    infoWindow = new google.maps.InfoWindow;
 
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
+    // var marker = new google.maps.Marker({
+    //     position: myLatLng,
+    //     map: map,
+    //     title: "Click to show location"
+    // });
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent(position.coords.latitude + ", " + position.coords.longitude);
-            infoWindow.open(map);
-            map.setCenter(pos);
-        }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-}
+    // marker.addListener('click', function() {
+    //     infowindow.open(map, marker);
+    // });
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
+    // var infowindow = new google.maps.InfoWindow({
+    // content: myLatLng.lat + "," + myLatLng.lng
+    // });
+
+    var myLoc;
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        placeMarker(event.latLng);
+        myLoc = event.latLng;
+     });
+     
+     function placeMarker(location) {
+         var marker = new google.maps.Marker({
+             position: location, 
+             map: map
+         });
+         alert('lat long: ' + myLoc);
+     }
+
+
 }
