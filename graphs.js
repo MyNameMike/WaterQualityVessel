@@ -21,7 +21,7 @@ function load() {
         var actual_JSON = JSON.parse(response);
 
         for (i = 0; i < Object.keys(actual_JSON).length; i++) {
-            
+
             addData(humidityChart,i,actual_JSON[i].Humidity);
             addData(airTempChart,i,actual_JSON[i].AirTemp);
             addData(luxChart,i,actual_JSON[i].Lux);
@@ -46,6 +46,8 @@ var humidityChart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {
@@ -70,6 +72,8 @@ var airTempChart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {
@@ -94,6 +98,8 @@ var luxChart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {
@@ -118,6 +124,8 @@ var turbidityChart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {
@@ -142,6 +150,8 @@ var phChart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {
@@ -166,6 +176,8 @@ var waterTempChart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {

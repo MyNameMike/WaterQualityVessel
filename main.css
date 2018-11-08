@@ -4,7 +4,15 @@ html, body {
     margin: 0;
     padding: 0;
     text-align: center;
+    position: relative;
 }
+
+canvas{
+    width:50% !important;
+    height:50% !important;
+    float: left;
+    padding: 2.5px;
+  }
 
 .selector-for-some-widget {
     box-sizing: content-box;
@@ -38,3 +46,8 @@ html, body {
     border-radius: 5px;
 }
 
+#float {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+}
