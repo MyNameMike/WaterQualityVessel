@@ -1,0 +1,62 @@
+[
+  {
+    "Lat": 25.769241948687306,
+    "Lng": -80.36408501686594,
+    "Humidity": 55,
+    "AirTemp": 69,
+    "Lux": 1790,
+    "Turbidity": 480,
+    "PH": 8.23,
+    "WaterTemp": 18
+  },
+  {
+    "Lat": 25.769401,
+    "Lng": -80.364009,
+    "Humidity": 56,
+    "AirTemp": 70.88,
+    "Lux": 1792,
+    "Turbidity": 440,
+    "PH": 8.01,
+    "WaterTemp": 19
+  },
+  {
+    "Lat": 25.769555,
+    "Lng": -80.363848,
+    "Humidity": 55,
+    "AirTemp": 70,
+    "Lux": 1791,
+    "Turbidity": 390,
+    "PH": 7.93,
+    "WaterTemp": 19
+  },
+  {
+    "Lat": 25.769761,
+    "Lng": -80.363735,
+    "Humidity": 57,
+    "AirTemp": 72,
+    "Lux": 1790,
+    "Turbidity": 400,
+    "PH": 6.33,
+    "WaterTemp": 19
+  },
+  {
+    "Lat": 25.769954,
+    "Lng": -80.363842,
+    "Humidity": 58,
+    "AirTemp": 72,
+    "Lux": 1792,
+    "Turbidity": 400,
+    "PH": 6,
+    "WaterTemp": 20
+  },
+  {
+    "Lat": 25.770167,
+    "Lng": -80.364304,
+    "Humidity": 60,
+    "AirTemp": 79,
+    "Lux": 1790,
+    "Turbidity": 350,
+    "PH": 5.99,
+    "WaterTemp": 21
+  }
+]
