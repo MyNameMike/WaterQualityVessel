@@ -45,9 +45,3 @@ canvas{
     border-width: 1px;
     border-radius: 5px;
 }
-
-#float {
-    position: absolute;
-    top: 20%;
-    left: 2%;
-}
