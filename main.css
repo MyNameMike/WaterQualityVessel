@@ -7,12 +7,22 @@ html, body {
     position: relative;
 }
 
-canvas {
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+ #map {
+    height: 500px;
+    width: 100%;
+    margin: 20px 0px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+/* canvas {
     width:50% !important;
     height:50% !important;
     float: left;
     padding: 2.5px;
-  }
+  } */
 
 iframe {
     margin: 1%;
@@ -44,12 +54,13 @@ iframe {
     border-radius: 75px;
 }
 
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
- #map {
-    height: 500px;
-    width: 100%;
-    margin: 20px 0px;
-    border-width: 1px;
-    border-radius: 5px;
+.graph {
+    display: inline-block;
+    
+    white-space: nowrap;
+}
+
+.container {
+    overflow-x: scroll;
+    overflow-y: hidden;
 }

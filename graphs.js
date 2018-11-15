@@ -1,37 +1,3 @@
-
-function loadJSON(file, callback) {   
-
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', file, true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-            }
-    };
-    xobj.send(null);  
-    }
-    
-
-function load() {
-    //Humidity , AirTemp , Lux , Turbidity , PH , WaterTemp
-    loadJSON("csvjson.json", function(response) {
-    
-        var actual_JSON = JSON.parse(response);
-
-        for (i = 0; i < Object.keys(actual_JSON).length; i++) {
-
-            addData(humidityChart,i,actual_JSON[i].Humidity);
-            addData(airTempChart,i,actual_JSON[i].AirTemp);
-            addData(luxChart,i,actual_JSON[i].Lux);
-            addData(turbidityChart,i,actual_JSON[i].Turbidity);
-            addData(phChart,i,actual_JSON[i].PH);
-            addData(waterTempChart,i,actual_JSON[i].WaterTemp);
-        }
-    });
-}
-
 var ctx = document.getElementById("humidityChart").getContext('2d');
 var humidityChart = new Chart(ctx, {
     type: 'line',
@@ -187,9 +153,6 @@ var waterTempChart = new Chart(ctx, {
         }
     }
 });
-
-
-load();
 
 function addData(chart, label, data) {
     chart.data.labels.push(label);

@@ -36,24 +36,38 @@
                 </div>
         </nav>
 
-        <div id="map"></div>
-                <script type="text/javascript" src="./show_map_data.js"></script>
-                <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB86Iq8lcUqgtMSdGpX42A9F1c3rDBmTMw&callback=initMap">
-                </script>
-        </div>
         
-        <div class="container-fluid"> <h4>
+        <div id="map"></div>
+            <script type="text/javascript" src="./show_map_data.js"></script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB86Iq8lcUqgtMSdGpX42A9F1c3rDBmTMw&callback=initMap">
+            </script>
+        
+        <input type="file" id="read-file" hidden="hidden" />
+        <button onClick="upload();" type="button" class="btn btn-info btn-lg btn-block" id="data">Upload Data</button> <br>
+
+
+        <div class="graph">
             <canvas id="humidityChart"></canvas>
-            <canvas id="airTempChart"></canvas>
-            <canvas id="luxChart"></canvas>
-            <canvas id="turbidityChart"></canvas>
-            <canvas id="phChart"></canvas>
-            <canvas id="waterTempChart"></canvas>
-            <script type="text/javascript" src="./graphs.js"></script>
-        </h4>
         </div>
-  
+        <div class="graph">
+            <canvas id="airTempChart"></canvas>
+        </div>
+        <div class="graph">
+            <canvas id="luxChart"></canvas>
+        </div>
+        <div class="graph">
+            <canvas id="turbidityChart"></canvas>
+        </div>
+        <div class="graph">
+            <canvas id="phChart"></canvas>
+        </div>
+        <div class="graph">
+            <canvas id="waterTempChart"></canvas>
+        </div>
+        <script type="text/javascript" src="./graphs.js"></script>
+        <br>
+        <br>
     </div>
 
     <!-- Optional JavaScript -->
