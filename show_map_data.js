@@ -12,8 +12,7 @@ function upload() {
     var readFileBtn = document.getElementById("read-file");
     readFileBtn.click();
     
-    readFileBtn.addEventListener("change", function(){
-        
+    readFileBtn.addEventListener("change", () => {
         load(readFileBtn.files[0].name); // Loads JSON file 
     });
     

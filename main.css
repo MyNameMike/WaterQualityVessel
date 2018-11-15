@@ -7,6 +7,10 @@ html, body {
     position: relative;
 }
 
+.container-fluid {
+    margin-bottom: 2rem;
+}
+
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
  #map {
@@ -17,12 +21,11 @@ html, body {
     border-radius: 5px;
 }
 
-/* canvas {
-    width:50% !important;
-    height:50% !important;
-    float: left;
-    padding: 2.5px;
-  } */
+canvas {
+    height: 500px;
+    width: 500px;
+    
+  }
 
 iframe {
     margin: 1%;
@@ -54,13 +57,16 @@ iframe {
     border-radius: 75px;
 }
 
+.graphs {
+    display: flex;
+    overflow-x: scroll;
+    height: 250px;
+}
+
 .graph {
-    display: inline-block;
-    
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
     white-space: nowrap;
 }
 
-.container {
-    overflow-x: scroll;
-    overflow-y: hidden;
-}
