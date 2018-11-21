@@ -39,9 +39,10 @@ function load(fileName) {
     
         var actual_JSON = JSON.parse(response);
 
-        //Humidity , AirTemp , Lux , Turbidity , PH , WaterTemp
+        //Humidity , AirTemp , Lux , Turbidity , Nitrogen , PH , WaterTemp
 
-        humidity = 50; airTemp = 72; lux = 10000; turbidity = 4; phMin = 6.5; phMax = 9; waterTemp = 17;
+        humidity = 70/* % */; airTemp = 75/* F */; lux = 2000/* Lux */; turbidity = 3/* V */; 
+        nitrogen = 450/* ppm */; phMin = 6.5/* PH */; phMax = 9/* PH */; waterTemp = 23.5/* C */;
 
         var count = 0;
         var color = ""; 
@@ -55,15 +56,17 @@ function load(fileName) {
             addData(airTempChart,i,actual_JSON[i].AirTemp);
             addData(luxChart,i,actual_JSON[i].Lux);
             addData(turbidityChart,i,actual_JSON[i].Turbidity);
+            addData(nitrogenChart,i,actual_JSON[i].Nitrogen);
             addData(phChart,i,actual_JSON[i].PH);
             addData(waterTempChart,i,actual_JSON[i].WaterTemp);
 
-            if(actual_JSON[i].Humidity > humidity) count++;
-            if(actual_JSON[i].AirTemp > airTemp) count++;
+            if(actual_JSON[i].Humidity >= humidity) count++;
+            if(actual_JSON[i].AirTemp >= airTemp) count++;
             if(actual_JSON[i].Lux > lux) count++;
-            if(actual_JSON[i].Turbidity < turbidity) count++;
+            if(actual_JSON[i].Turbidity <= turbidity) count++;
+            if(actual_JSON[i].Nitrogen > nitrogen) count++;
             if(actual_JSON[i].PH < phMin || actual_JSON[i].PH > phMax) count++;
-            if(actual_JSON[i].WaterTemp > waterTemp) count++;
+            if(actual_JSON[i].WaterTemp >= waterTemp) count++;
 
             console.log("count: " + count)
             if (count < 3) color = "green";
