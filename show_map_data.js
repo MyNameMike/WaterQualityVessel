@@ -5,6 +5,17 @@ function initMap() {
         zoom: 18.5,
         center: {lat: 25.769587, lng: -80.364214},
     });
+
+if (navigator.geolocation) { // Looks for current location of user 
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+        map.setCenter(pos);
+        });
+    } 
 }
 
 function upload() {
