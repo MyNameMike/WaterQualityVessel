@@ -13,6 +13,18 @@ function initMap() {
     });
 }
 
+if (navigator.geolocation) { // Looks for current location of user 
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+        map.setCenter(pos);
+        });
+    } 
+}
+
 // Adds a marker to the map and push to the array.
 function addMarker(location) {
     var marker = new google.maps.Marker({
