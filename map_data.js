@@ -7,13 +7,7 @@ function initMap() {
         center: {lat: 25.769587, lng: -80.364214},
     });
 
-    // This event listener will call addMarker() when the map is clicked.
-    map.addListener('click', function(event) {
-        addMarker(event.latLng);
-    });
-}
-
-if (navigator.geolocation) { // Looks for current location of user 
+    if (navigator.geolocation) { // Looks for current location of user 
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
                 lat: position.coords.latitude,
@@ -23,6 +17,11 @@ if (navigator.geolocation) { // Looks for current location of user
         map.setCenter(pos);
         });
     } 
+
+    // This event listener will call addMarker() when the map is clicked.
+    map.addListener('click', function(event) {
+        addMarker(event.latLng);
+    });
 }
 
 // Adds a marker to the map and push to the array.

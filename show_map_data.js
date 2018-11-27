@@ -6,7 +6,7 @@ function initMap() {
         center: {lat: 25.769587, lng: -80.364214},
     });
 
-if (navigator.geolocation) { // Looks for current location of user 
+    if (navigator.geolocation) { // Looks for current location of user 
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
                 lat: position.coords.latitude,
